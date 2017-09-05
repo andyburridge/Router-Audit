@@ -1,0 +1,121 @@
+#Aberdeen
+10.255.3.61
+#Aberyswyth
+10.255.3.51
+#Airdre
+#Not yet migrated
+#Alfreton
+10.255.3.21
+#Atlantic Pavilion Model Depot
+#Atlantic Pavilion
+10.255.3.9
+#Aylesham
+10.255.3.113
+#Basildon
+#Not yet migrated
+#Borehamwood
+10.255.3.127
+#Bristol
+10.255.3.85
+#Burslem
+10.255.3.115
+#Carlisle
+10.255.3.87
+#Carrick
+10.255.3.71
+#Dartford
+10.255.3.41
+#Farnborough
+10.255.3.23
+#Gateshead
+10.255.3.117
+#Gatwick
+10.255.3.53
+#Glasgow
+10.255.3.73
+#Gloucester
+10.255.3.43
+#Hatfield
+10.255.3.13
+#Hayes
+#Not yet migrated
+#Inverness
+10.255.3.29
+#Ipswich
+#Not yet migrated
+#Isle of Wight
+#Not yet migrated
+#Kilmarnock
+#Not yet migrated
+#Leamington
+10.255.3.55
+#Leeds
+10.255.3.77
+#Lichfield
+10.255.3.93
+#Lincoln
+#Not yet migrated
+#Little Hulton
+10.255.3.252
+#Livingston
+10.255.3.131
+#LLandudno
+10.255.3.119
+#Llanelli
+10.255.3.95
+#London Central
+10.255.3.137
+#Maidstone
+#Not yet migrated
+#Middleton
+#Not yet migrated
+#Mitcham
+10.255.3.67
+#Nant Garw
+10.255.3.99
+#Newton Abbott
+10.255.3.33
+#North Devon
+10.255.3.111
+#Northampton
+10.255.3.25
+#Norwich
+10.255.3.121
+#Oban
+#Not yet migrated
+#Oldbury (Sandwell)
+10.255.3.103
+#Omagh
+10.255.3.123
+#Perth
+10.255.3.49
+#Peterborough
+#Not yet migrated
+#Preston
+10.255.3.101
+#Reading
+10.255.3.59
+#Risley
+#Not yet migrated
+#Selby
+10.255.3.27
+#Shaw
+10.255.3.15
+#Sheffield
+#Not yet migrated
+#Southampton
+10.255.3.105
+#Stockton
+#Split VRF
+#Truro
+#Split VRF
+#Waltham Cross
+10.255.3.7
+#Wednesbury
+10.255.3.17
+#Wednesbury - Transport
+10.255.3.19
+#Wrexham
+10.255.3.11
+#Yeovil
+10.255.3.83
