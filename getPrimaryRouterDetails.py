@@ -4,7 +4,7 @@ from runRemoteCommand import runRemoteCommand
 
 def getPrimaryRouterDetails(ip, username, password):
 	###########################################################################
-	# function to gather hostname and IOS version from a given IOS device	  #
+	# function to gather router details from a given IOS device	  			  #
 	#																		  #
 	# input parameters:														  #
 	#	ip: 		the ip address of the device to target					  #
@@ -16,7 +16,6 @@ def getPrimaryRouterDetails(ip, username, password):
 	routerHostname = runRemoteCommand(ip,username,password,"show run | i hostname")
 	
 	# edit the return string to include only interesting data
-		
 	# hostname string returns in the format:
 	# hostname <hostname>
 	
@@ -29,7 +28,6 @@ def getPrimaryRouterDetails(ip, username, password):
 	routerImage = runRemoteCommand(ip,username,password,"show ver | i image")
 	
 	#edit the return string to include only interesting data
-	
 	# image string returns in the format:
 	# System image file is "bootflash:/<image>"
 	# or
@@ -63,7 +61,7 @@ def getPrimaryRouterDetails(ip, username, password):
 		
 		
 		
-	# call fuction 'runRemoteCommand' in order to get the MTU value from Tunnel 200
+	# call fuction 'runRemoteCommand' in order to get the MTU value from Tunnel 100
 	tunnelMTU = runRemoteCommand(ip,username,password,"sh run int tu100 | i mtu")
 	
 	# edit the return string to include only interesting data
@@ -74,26 +72,35 @@ def getPrimaryRouterDetails(ip, username, password):
 	# split string into an array on a whitespace delimeter and use the third argument in the array
 	tunnelMTU = tunnelMTU.split(' ')
 	try:
-		tunnelMTU = tunnelMTU[3]
+		tunnelMTU = tunnelMTU[3].rstrip()
 	except IndexError:
 		routerImage = "Array Out Of Bounds"
 	
 	
-	# call fuction 'runRemoteCommand' in order to get the current ip fragmentation statistics
-	fragmentStats = runRemoteCommand(ip,username,password,"sh ip traffic | i frag|reass")
+	# call fuction 'runRemoteCommand' in order to get the current ip fragmentation & reassembly statistics
+	fragmentStats = runRemoteCommand(ip,username,password,"sh ip traffic | i frag")
+	reassemblyStats = runRemoteCommand(ip,username,password,"sh ip traffic | i reass")
 	
-	# strip leading whitespace from the string
+	# strip leading whitespace from the strings
 	fragmentStats = fragmentStats.lstrip()
+	reassemblyStats = reassemblyStats.lstrip()
+
+	# strip commas from the strings
+	fragmentStats = fragmentStats.replace(",","")
+	reassemblyStats = reassemblyStats.replace(",","")
+
+	# combine the strings
+	fragmentStats = fragmentStats + "," + reassemblyStats
 	
 	
 	# call fuction 'runRemoteCommand' in order to check if DPD configuration is in place
-	dpd = runRemoteCommand(ip,username,password,"sh run | i dpd")
+	dpd = runRemoteCommand(ip,username,password,"sh run | i dpd").lstrip()
 	if dpd == "":
 		dpd = ("No DPD Configured")
 		
 		
 	# call fuction 'runRemoteCommand' in order to check if MSS configuration is in place on tunnel interface
-	mss = runRemoteCommand(ip,username,password,"sh run | i mss")
+	mss = runRemoteCommand(ip,username,password,"sh run | i mss").lstrip()
 	if mss == "":
 		mss = ("No MSS Configured on tunnel interface")	
 	
