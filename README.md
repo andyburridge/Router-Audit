@@ -1,5 +1,6 @@
-Router Audit
+# Router Audit
 
+## Description 
 Using Netmiko, SSH to a list of routers taken from a given text file and perform an audit, returning the following information on each router:
 - Router hostname
 - IOS image currently running on the router
@@ -11,14 +12,14 @@ Using Netmiko, SSH to a list of routers taken from a given text file and perform
 Python 2.7
 
 
-Prerequisites
+## Prerequisites
 
 Netmiko, Paramiko
 
 
-Usage
+## Usage
 
-./routerAudit.py <textfile> <username> <password>"
+./routerAudit.py <textfile> <username> <password>
 where:
 - <textfile> a list of router IP addresses to connect to.  Any lines that start with a '#' are igorned as comments.	
 - <username> the username used for authentication to the devices
@@ -27,6 +28,6 @@ where:
 Script outputs a text file in the /Output/ subdirectory that contains the audit information in a comma separated format.		
 
 
-Author
+## Author
 
 Andrew Burridge
